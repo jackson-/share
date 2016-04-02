@@ -1,0 +1,290 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5onit | The Grubhub for Weed</title>
+    <link href="{% static "css/index.css" %}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="navigationBar">
+      <div id="navigationBarPart1">
+        <h1 id="navigationLogo"></h1>
+        <a href="" class="navigationPart1Link">Pickup</a>
+        <a href="" class="navigationPart1Link" id="active">Delivery</a>
+      </div>
+      <div id="navigationBarPart2">
+        <a href="#" id="timeSelection"><span style="float: left;" class="fontello biggerFont">T</span>ASAP <span style="" class="fontello">D</span></a>
+      </div>
+      <div id="navigationBarPart3">
+        <p class="fontello icon">L</p>
+        <input class="navigationInput" placeholder="Where are you? (Required)">
+      </div>
+      <div id="navigationBarPart4">
+        <p class="fontello icon">S</p>
+        <input class="navigationInput" placeholder="Search (e.g. Purple, sour, satifa)">
+      </div>
+      <div id="navigationBarPart5">
+        <a href="#" id="contactLink">Contact Us</a>
+        <a href="#" class="navigationBarPart5Link">c</a>
+        <a href="#" class="navigationBarPart5Link">u</a>
+      </div>
+    </div>
+    <div id="feed">
+      <div id="sideSelection">
+        <div id="sideSelectionTop">
+          <h2 id="sideSelectionHeader">Filters</h2>
+          <a href="#" id="sideSelectionClearAll">Clear All</a>
+        </div>
+        <div class="sideSelectionDivider">
+          <h2 class="sideSelectionDividerHeader">Cuisine</h2>
+          <a href="#" class="sideSelectionDividerClear">Clear</a>
+        </div>
+        <div class="checkBoxContainer">
+          <label>
+            <input type="checkbox">
+            Sandwiches
+          </label>
+          <label>
+            <input type="checkbox">
+            Salads
+          </label>
+          <label>
+            <input type="checkbox">
+            Hamburgers
+          </label>
+          <label>
+            <input type="checkbox">
+            Wraps
+          </label>
+          <label>
+            <input type="checkbox">
+            American
+          </label>
+          <label>
+            <input type="checkbox">
+            Latin American
+          </label>
+          <label>
+            <input type="checkbox">
+            Seafood
+          </label>
+          <label>
+            <input type="checkbox">
+            Chicken
+          </label>
+          <label>
+            <input type="checkbox">
+            Coffee and Tea
+          </label>
+          <label>
+            <input type="checkbox">
+            Mexican
+          </label>
+        </div>
+        <div class="sideSelectionDivider">
+          <h2 class="sideSelectionDividerHeader">Rating</h2>
+          <a href="#" class="sideSelectionDividerClear">Clear</a>
+        </div>
+        <div class="rate">
+          <p id="rateUp">& up</p>
+          <input type="radio" id="star5" name="rate" value="5" />
+          <label for="star5" title="5 Stars">5 stars</label>
+          <input type="radio" id="star4" name="rate" value="4" />
+          <label for="star4" title="4 Stars">4 stars</label>
+          <input type="radio" id="star3" name="rate" value="3" />
+          <label for="star3" title="3 Stars">3 stars</label>
+          <input type="radio" id="star2" name="rate" value="2" />
+          <label for="star2" title="2 Stars">2 stars</label>
+          <input type="radio" id="star1" name="rate" value="1" />
+          <label for="star1" title="1 Star">1 star</label>
+        </div>
+        <div class="sideSelectionDivider">
+          <h2 class="sideSelectionDividerHeader">Price</h2>
+          <a href="#" class="sideSelectionDividerClear">Clear</a>
+        </div>
+        <div class="price">
+          <input type="radio" id="price5" name="price" value="5" />
+          <label for="price5" title="Price" id="labelPrice5"></label>
+          <input type="radio" id="price4" name="price" value="4" />
+          <label for="price4" title="Price"></label>
+          <input type="radio" id="price3" name="price" value="3" />
+          <label for="price3" title="Price"></label>
+          <input type="radio" id="price2" name="price" value="2" />
+          <label for="price2" title="Price"></label>
+          <input type="radio" id="price1" name="price" value="1" />
+          <label for="price1" title="Price"></label>
+        </div>
+        <div class="sideSelectionDivider">
+          <h2 class="sideSelectionDividerHeader">Features</h2>
+          <a href="#" class="sideSelectionDividerClear">Clear</a>
+        </div>
+        <div class="checkBoxContainer">
+          <label>
+            <input type="checkbox">
+            Coupons Available
+          </label>
+          <label>
+            <input type="checkbox">
+            New
+          </label>
+          <label>
+            <input type="checkbox">
+            Order Tracking
+          </label>
+          <label>
+            <input type="checkbox">
+            Order Now
+          </label>
+          <label>
+            <input type="checkbox">
+            Free Delivery
+          </label>
+          <label>
+            <input type="checkbox">
+            Hide Delivery Services
+          </label>
+          <label>
+            <input type="checkbox">
+            Catering
+          </label>
+        </div>
+      </div>
+      <div id="rightSide">
+        <div id="rightSideTop">
+          <h1 id="rightSideTopHeader">Pick A Vendor</h1>
+          <p class="rightSideTopText">Where would you like to order from?</p>
+          <p class="rightSideTopText">Choose wisely and get started.</p>
+        </div>
+        <div id="sortBy">
+          <p id="sortByPages"><strong>1-20</strong> of <strong>136</strong> near you</p>
+          <label id="dropdown">
+            Sort by
+            <select id="sortByDropDown" name="filter_by">
+              <option value="default" selected>Default</option>
+              <option value="vendor_name">Vendor Name</option>
+              <option value="price_ascending">Price (Ascending)</option>
+              <option value="price_descending">Price (Descending)</option>
+              <option value="rating">Rating</option>
+              <option value="distance">Distance</option>
+              <option value="delivery_estimate">Delivery Estimate</option>
+              <option value="delivery_minimum">Delivery Minimum</option>
+              <option value="delivery_fee">Delivery Fee</option>
+            </select>
+          </label>
+        </div>
+        <a href="/dispensary">
+          <div class="resultContainer">
+            <img src="{{STATIC_URL}}img/sample.png" class="resultImage"/>
+            <div class="resultInfoContainer">
+              <h1 class="resultTitle">King of Mary Jane LTD.</h1>
+              <p class="resultOffering">Sour, Sweet, White Widow</p>
+            </div>
+            <div class="resultSubSection">
+              <h1 class="resultSubSectionHeader">20-30 m</h1>
+              <p class="resultSubSectionText">Est. Wait</p>
+            </div>
+            <div class="resultSubSection">
+              <h1 class="resultSubSectionHeader">Free</h1>
+              <p class="resultSubSectionText">Delivery</p>
+            </div>
+            <div class="resultSubSection">
+              <h1 class="resultSubSectionHeader">$10</h1>
+              <p class="resultSubSectionText">Min</p>
+            </div>
+            <div class="resultSubSection">
+              <h1 class="resultSubSectionHeader"><span style="color: #F8BD00;">★★★</span>★★</h1>
+              <p class="resultSubSectionText">29 Ratings</p>
+            </div>
+            <div class="resultSubSection noBorder">
+              <h1 class="resultSubSectionHeader"><span style="color: #F8BD00;">$</span>$$$$</h1>
+              <p class="resultSubSectionText">Pricing</p>
+            </div>
+          </div>
+        </a>
+        {% for d in dispensaries %}
+        <a href="/dispensary">
+          <div class="resultContainer">
+            <img src="{{STATIC_URL}}img/sample.png" class="resultImage"/>
+            <div class="resultInfoContainer">
+              <h1 class="resultTitle">{{d.name}}</h1>
+              <p class="resultOffering">{{d.description}}</p>
+            </div>
+            <div class="resultSubSection">
+              <h1 class="resultSubSectionHeader">{{d.est_wait_begin}}-{{d.est_wait_end}} m</h1>
+              <p class="resultSubSectionText">Est. Wait</p>
+            </div>
+            <div class="resultSubSection">
+              <h1 class="resultSubSectionHeader">Delivery Fee</h1>
+              {%if d.delivery_fee == 0 %}
+                <p class="resultSubSectionText">Free</p>
+              {%else%}
+                <p class="resultSubSectionText">${{d.delivery_fee}}</p>
+              {%endif%}
+            </div>
+            <div class="resultSubSection">
+              <h1 class="resultSubSectionHeader">${{d.delivery_minimum}}</h1>
+              <p class="resultSubSectionText">Min</p>
+            </div>
+            <div class="resultSubSection">
+              <h1 class="resultSubSectionHeader"><span style="color: #F8BD00;">★★★</span>★★</h1>
+              <p class="resultSubSectionText">29 Ratings</p>
+            </div>
+            <div class="resultSubSection noBorder">
+              <h1 class="resultSubSectionHeader"><span style="color: #F8BD00;">$</span>$$$$</h1>
+              <p class="resultSubSectionText">Pricing</p>
+            </div>
+          </div>
+        </a>
+        {%endfor%}
+      </div>
+    </div>
+    <div id="footer">
+      <div class="footerSection">
+        <a href="#" class="footerSectionHeader">Get to Know Us</a>
+        <a href="#" class="footerSectionLink">About Us</a>
+        <a href="#" class="footerSectionLink">Promotions</a>
+        <a href="#" class="footerSectionLink">Our Blog, the Delivery Bag</a>
+        <a href="#" class="footerSectionLink">Careers</a>
+        <a href="#" class="footerSectionLink">Investor Relations</a>
+      </div>
+      <div class="footerSection">
+        <a href="#" class="footerSectionHeader">Business Solutions</a>
+        <a href="#" class="footerSectionLink">Join Our Restaurant Network</a>
+        <a href="#" class="footerSectionLink">Drive With Us</a>
+        <a href="#" class="footerSectionLink">Learn About Company Accounts</a>
+      </div>
+      <div class="footerSection">
+        <a href="#" class="footerSectionHeader">Contact & Help</a>
+        <a href="#" class="footerSectionLink">Contact Us</a>
+        <a href="#" class="footerSectionLink">FAQ</a>
+      </div>
+      <div class="footerSection">
+        <a href="#" class="footerSectionHeader">Browse By Cities</a>
+        <a href="#" class="footerSectionLink">New York City</a>
+        <a href="#" class="footerSectionLink">Manhattan</a>
+        <a href="#" class="footerSectionLink">Queens</a>
+        <a href="#" class="footerSectionLink">Brooklyn</a>
+        <a href="#" class="footerSectionLink">View All Cities >></a>
+      </div>
+      <div class="footerSection">
+        <a href="#" class="footerSectionHeader">Browse By Cuisines</a>
+        <a href="#" class="footerSectionLink">Breakfast</a>
+        <a href="#" class="footerSectionLink">Chinese</a>
+        <a href="#" class="footerSectionLink">Healthy</a>
+        <a href="#" class="footerSectionLink">Indian</a>
+        <a href="#" class="footerSectionLink">Italian</a>
+        <a href="#" class="footerSectionLink">Late Night</a>
+        <a href="#" class="footerSectionLink">Mexican</a>
+        <a href="#" class="footerSectionLink">Pizza</a>
+        <a href="#" class="footerSectionLink">Sushi</a>
+        <a href="#" class="footerSectionLink">Thai</a>
+        <a href="#" class="footerSectionLink">View All Cuisines >></a>
+      </div>
+      <div id="footerBottomDiv">
+        <p id="copyright">&copy; 2016 FiveOnIt All Rights Reserved</p>
+        <a href="#" class="footerBottomDivLink">Privacy Policy</a>
+        <a href="#" class="footerBottomDivLink">Terms Of Use</a>
+      </div>
+    </div>
+  </body>
+</html>
