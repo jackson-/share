@@ -5,6 +5,17 @@
     <title>5onit | The Grubhub for Weed</title>
     <link href="{% static "css/index.css" %}" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-2.2.2.js" integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE=" crossorigin="anonymous"></script>
+    <script>
+      function logout(){
+        $.ajax({
+          method:"POST",
+          url:"/users/logout",
+          data:{
+            csrf_token:"{{csrf_token}}",
+          },
+        })
+      }
+    </script>
   </head>
   <body>
     <div id="navigationBar">
@@ -36,6 +47,7 @@
           </form>
         {% else %}
           <a href="/users/registration" class="navigationBarPart5Link">u</a>
+          <a href="/users/logout">Logout</a>
         {% endif %}
       </div>
     </div>

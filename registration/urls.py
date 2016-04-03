@@ -17,9 +17,11 @@ from django.conf.urls import url
 from django.contrib import admin
 from registration.controllers.register import Registration
 from registration.controllers.login import Login
+from registration.controllers.logout import Logout
 
 print "IN USERS"
 urlpatterns = [
     url(r'^registration', Registration.as_view()),
     url(r'^login', Login.as_view()),
+    url(r'^logout', Logout.as_view()),
 ]
