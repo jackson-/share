@@ -11,9 +11,9 @@ class StoresView(View):
     template_name = "index.html"
 
     def get(self, request):
-        user = authenticate(username='new@mail.com', password='123')
+        # user = authenticate(username='new@mail.com', password='123')
         stores = Store.objects.all()
-        return render(request, self.template_name, {'stores':stores, 'user':user})
+        return render(request, self.template_name, {'stores':stores})
 
     def post(self, request):
         pass

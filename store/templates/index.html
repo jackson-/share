@@ -4,6 +4,7 @@
   <head>
     <title>5onit | The Grubhub for Weed</title>
     <link href="{% static "css/index.css" %}" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.2.js" integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="navigationBar">
@@ -26,7 +27,16 @@
       <div id="navigationBarPart5">
         <a href="#" id="contactLink">Contact Us</a>
         <a href="#" class="navigationBarPart5Link">c</a>
-        <a href="/users/registration" class="navigationBarPart5Link">u</a>
+        {% if user.is_anonymous %}
+          <form method="POST" action="/users/login">
+            <input id="login" name = "login" placeholder="Login">
+            <input id="password" name = "password" placeholder="Password">
+            {% csrf_token %}
+            <input type="submit" onclick="login(event);">
+          </form>
+        {% else %}
+          <a href="/users/registration" class="navigationBarPart5Link">u</a>
+        {% endif %}
       </div>
     </div>
     <div id="feed">
