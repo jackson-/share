@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from registration.controllers.register import Registration
+print "IN USERS"
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^registration', Registration.as_view()),
 ]

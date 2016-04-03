@@ -84,6 +84,10 @@ DATABASES = {
 }
 
 
+AUTHENTICATION_BACKENDS = (
+        'django.contrib.auth.backends.ModelBackend',
+    )
+
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -118,7 +122,7 @@ USE_TZ = True
 
 
 ##Specify Custom User for authentication
-# AUTH_USER_MODEL = 'registration.MyUser'
+AUTH_USER_MODEL = 'registration.MyUser'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -129,7 +133,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'store/static'),
-    os.path.join(os.path.dirname(BASE_DIR), 'share/store/static'),
+    os.path.join(BASE_DIR, 'registration/static'),
+    os.path.join(BASE_DIR, 'share/static'),
 )
-# print "DIRS"
-# print STATICFILES_DIRS
+print "DIRS"
+print STATICFILES_DIRS
