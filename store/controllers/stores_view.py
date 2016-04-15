@@ -13,6 +13,7 @@ class StoresView(View):
     def get(self, request):
         # user = authenticate(username='new@mail.com', password='123')
         stores = Store.objects.all()
+        print "STORES", stores
         return render(request, self.template_name, {'stores':stores})
 
     def post(self, request):

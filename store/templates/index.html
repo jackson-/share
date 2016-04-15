@@ -173,7 +173,11 @@
       </div>
       <div id="rightSide">
         <div id="rightSideTop">
-          <h1 id="rightSideTopHeader">Pick A Vendor {{user}}</h1>
+          {% if user.is_anonymous %}
+            <h1 id="rightSideTopHeader">Pick A Vendor Guest!</h1>
+          {% else %}
+            <h1 id="rightSideTopHeader">Pick A Vendor {{user}}!</h1>
+          {% endif %}
           <p class="rightSideTopText">Where would you like to order from?</p>
           <p class="rightSideTopText">Choose wisely and get started.</p>
         </div>
@@ -223,8 +227,8 @@
             </div>
           </div>
         </a>
-        {% for d in dispensaries %}
-        <a href="/dispensary">
+        {% for d in stores %}
+        <a href="/store/{{d.id}}">
           <div class="resultContainer">
             <img src="{{STATIC_URL}}img/sample.png" class="resultImage"/>
             <div class="resultInfoContainer">

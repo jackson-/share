@@ -4,12 +4,12 @@ from store.models import Store, Item
 
 class ItemsView(View):
 
-    template_name = "index.html"
+    template_name = "viewing.html"
 
     def get(self, request, **kwargs):
         print "LIST"
         store = Store.objects.get(id=kwargs['store_id'])
-        items = Item.objects.get(store)
+        items = Item.objects.get(store=store)
         return render(request, self.template_name, {'items':items})
 
     def post(self, request):
